@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
 
 
         nextActivityButton.setOnClickListener {
-            val googleLink = Uri.parse("https://google.com")
-            val openBrowserIntent = Intent(Intent.ACTION_VIEW, googleLink)
-            startActivity(openBrowserIntent)
+            val link = Uri.parse("https://google.com")
+            val openBrowserIntent = Intent(Intent.ACTION_VIEW, link)
+            val choser=Intent.createChooser(openBrowserIntent,"Browser")
+            startActivity(choser)
         }
     }
 }
